@@ -1,12 +1,3 @@
-/*
-This is called the 'Hamming distance'
-
-    GAGCCTACTAACGGGAT
-    CATCGTAATGACGGCCT
-    ^ ^ ^  ^ ^    ^^
-
-The Hamming distance between these two DNA strands is 7.
-*/
 
 var Hamming = {
 

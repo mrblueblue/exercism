@@ -42,7 +42,7 @@ describe("words()", function() {
   });
 
   it("handles properties that exist on Object’s prototype", function() {
-    var expectedCounts = { reserved: 1, words : 1, like :1,  prototype: 1, and : 1, toString: 1,  "ok?": 1};
-    expect(words("reserved words like prototype and toString ok?")).toEqual(expectedCounts);
+    var expectedCounts = { reserved: 1, words : 1, like :1,  prototype: 1, and : 1, toString: 2,  "ok?": 1};
+    expect(words("reserved words like prototype and toString toString ok?")).toEqual(expectedCounts);
   });
 });

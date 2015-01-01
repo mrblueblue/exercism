@@ -1,17 +1,16 @@
 var words = function(str) {
 
-	var count = Object.create(null)
+    var wordCount = Object.create(null), //create empty object
+        sentence = str.split(/\s+/); //splits word according to whitespace
 
-	str.split(/\s+/).forEach(function(word){
+    sentence.forEach( function (word) {
+        if (wordCount[word] === undefined) //if property exists in Object's prototype
+            wordCount[word] = 1; //initially set word count to 1
+        else
+            wordCount[word]+=1;
+    })
 
-		// I'm still learning JS, so maybe there is a better way to write the conditional
-		if (count[word] === undefined)
-			count[word] = 1;
-		else
-			count[word]++;
-	})
-
-	return count;
+    return wordCount;
 
 };
 
