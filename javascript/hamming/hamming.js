@@ -10,7 +10,7 @@ The Hamming distance between these two DNA strands is 7.
 
 var Hamming = {
 
-compute: function (xStrand, yStrand) {
+    compute: function (xStrand, yStrand) {
         // computes hamming distance between two equal length DNA strands
 
         'use strict'
