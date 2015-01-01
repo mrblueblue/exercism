@@ -10,23 +10,23 @@ The Hamming distance between these two DNA strands is 7.
 
 var Hamming = {
 
-	compute: function (xStrand, yStrand) {
-		// computes hamming distance between two equal length DNA strands
+compute: function (xStrand, yStrand) {
+        // computes hamming distance between two equal length DNA strands
 
-		'use strict'
-	    var hammingDistance = 0;
+        'use strict'
+        var hammingDistance = 0;
 
-	    if (xStrand.length !== yStrand.length) {
+        if (xStrand.length !== yStrand.length) {
             throw new Error('DNA strands must be of equal length.');
         }
 
-	    for (var i = 0; i < xStrand.length; i+=1) {
-	        if (xStrand[i]!=yStrand[i]) 
-	            hammingDistance+=1;
-	    };
+        for (var i = 0; i < xStrand.length; i+=1) {
+            if (xStrand[i]!=yStrand[i]) 
+                hammingDistance+=1;
+        };
 
-	return hammingDistance;
-	}
-}
+    return hammingDistance;
+    }
+}   
 
 module.exports = Hamming;
