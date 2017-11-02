@@ -1,23 +1,22 @@
-var Anagram = function(word){
+const charCodeSum = word =>
+  word.split("").reduce(
+    (accum = 0, letter) => {
+			return accum + letter.charCodeAt(0)
+		}, 0
+  );
 
-	function sorted(str){
-		return str.toLowerCase().split('').sort().join('')
-	}
-
-	function isAnagram(possibleMatch){
-		var sortedWord = sorted(word),
-			sortedPossibleMatch = sorted(possibleMatch);
-
-		return sortedWord === sortedPossibleMatch && word.toLowerCase() !== possibleMatch.toLowerCase();
-	};
-
-	function findAnagrams(collection){
-		if (typeof collection === 'string')
-     		 collection = [].slice.apply(arguments);
-		return collection.filter(isAnagram)
-	};
-
-	return {matches: findAnagrams};
+module.exports = function Anagram(baseWord) {
+  const baseWordFormatted = baseWord.toLowerCase();
+  return {
+    matches: function matches(...args) {
+      const words = Array.isArray(args[0]) ? [...args[0]] : args;
+      return words.filter(word => {
+        const wordFormatted = word.toLowerCase();
+        return (
+          wordFormatted !== baseWordFormatted &&
+          charCodeSum(baseWordFormatted) === charCodeSum(wordFormatted)
+        );
+      });
+    }
+  };
 };
-
-module.exports = Anagram;

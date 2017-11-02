@@ -1,0 +1,5 @@
+{
+    "spec_files": [
+        "anagram/anagram_test.spec.js"
+    ]
+}
